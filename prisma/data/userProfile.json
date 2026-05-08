@@ -1,0 +1,71 @@
+{
+  "name": "Junior Doctor",
+  "nameMn": "Бяцхан эмч",
+  "avatar": "👨‍⚕️",
+  "level": 5,
+  "streak": 7,
+  "rank": 4,
+  "totalUsers": 1247,
+  "badges": [
+    {
+      "id": "first-lesson",
+      "name": "First Steps",
+      "nameMn": "Эхний алхам",
+      "icon": "📚",
+      "description": "Complete first lesson",
+      "descriptionMn": "Эхний хичээлийг дуусгах",
+      "unlocked": true
+    },
+    {
+      "id": "perfect-score",
+      "name": "Perfect Score",
+      "nameMn": "Төгс оноо",
+      "icon": "⭐",
+      "description": "Get 100% on quiz",
+      "descriptionMn": "Асуултад 100% авах",
+      "unlocked": true
+    },
+    {
+      "id": "week-streak",
+      "name": "On Fire",
+      "nameMn": "Галт хүн",
+      "icon": "🔥",
+      "description": "7 day streak",
+      "descriptionMn": "7 өдрийн дараалал",
+      "unlocked": true
+    },
+    {
+      "id": "game-master",
+      "name": "Game Master",
+      "nameMn": "Тоглоомын мастер",
+      "icon": "🎮",
+      "description": "Complete 10 games",
+      "descriptionMn": "10 тоглоом дуусгах",
+      "unlocked": false,
+      "progress": 6,
+      "maxProgress": 10
+    },
+    {
+      "id": "tooth-expert",
+      "name": "Tooth Expert",
+      "nameMn": "Шүдний мэргэжилтэн",
+      "icon": "🦷",
+      "description": "Master teeth chapter",
+      "descriptionMn": "Шүдний бүлэг дуусгах",
+      "unlocked": false,
+      "progress": 2,
+      "maxProgress": 5
+    },
+    {
+      "id": "body-pro",
+      "name": "Body Expert",
+      "nameMn": "Биеийн мэргэжилтэн",
+      "icon": "🏆",
+      "description": "Complete all chapters",
+      "descriptionMn": "Бүх бүлэг дуусгах",
+      "unlocked": false,
+      "progress": 1,
+      "maxProgress": 8
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "incisor-1",
+    "type": "incisor",
+    "name": "Central Incisor",
+    "nameMn": "Төв хадаас",
+    "targetX": 48,
+    "targetY": 35,
+    "targetWidth": 80,
+    "targetHeight": 100,
+    "rotation": -5,
+    "info": "Central incisors are the front teeth used for cutting food",
+    "infoMn": "Төв хадаас нь урд талын шүд бөгөөд хоол зүсэхэд ашигладаг"
+  },
+  {
+    "id": "incisor-2",
+    "type": "incisor",
+    "name": "Lateral Incisor",
+    "nameMn": "Хажуугийн хадаас",
+    "targetX": 62,
+    "targetY": 38,
+    "targetWidth": 75,
+    "targetHeight": 95,
+    "rotation": 5,
+    "info": "Lateral incisors help cut and tear food alongside central incisors",
+    "infoMn": "Хажуугийн хадаас нь төв хадаастай хамт хоол зүсэх, таслахад тусалдаг"
+  },
+  {
+    "id": "canine",
+    "type": "canine",
+    "name": "Canine",
+    "nameMn": "Соёо шүд",
+    "targetX": 75,
+    "targetY": 42,
+    "targetWidth": 70,
+    "targetHeight": 110,
+    "rotation": 10,
+    "info": "Canines are pointed teeth used for tearing and gripping food",
+    "infoMn": "Соёо шүд нь хурц шүд бөгөөд хоол урах, барихад ашигладаг"
+  },
+  {
+    "id": "premolar",
+    "type": "premolar",
+    "name": "Premolar",
+    "nameMn": "Өмнөх арааны шүд",
+    "targetX": 25,
+    "targetY": 42,
+    "targetWidth": 85,
+    "targetHeight": 105,
+    "rotation": -10,
+    "info": "Premolars crush and grind food into smaller pieces",
+    "infoMn": "Өмнөх арааны шүд нь хоолыг бутлаж, жижиг хэсэг болгодог"
+  },
+  {
+    "id": "molar-1",
+    "type": "molar",
+    "name": "First Molar",
+    "nameMn": "Нэгдүгээр арааны шүд",
+    "targetX": 15,
+    "targetY": 48,
+    "targetWidth": 95,
+    "targetHeight": 110,
+    "rotation": -15,
+    "info": "First molars are large grinding teeth at the back of your mouth",
+    "infoMn": "Нэгдүгээр арааны шүд нь амны хойд хэсэгт байрлах том нунтаглагч шүд"
+  },
+  {
+    "id": "molar-2",
+    "type": "molar",
+    "name": "Second Molar",
+    "nameMn": "Хоёрдугаар арааны шүд",
+    "targetX": 85,
+    "targetY": 48,
+    "targetWidth": 95,
+    "targetHeight": 110,
+    "rotation": 15,
+    "info": "Second molars help grind food thoroughly before swallowing",
+    "infoMn": "Хоёрдугаар арааны шүд нь хоолыг залгихын өмнө сайтар нунтаглахад тусалдаг"
+  }
+]

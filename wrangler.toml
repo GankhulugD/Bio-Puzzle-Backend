@@ -1,0 +1,14 @@
+# Cloudflare Workers — Express (`src/worker.ts`) + Prisma Postgres (`PRISMA_PG_ADAPTER` + `pg` pool).
+# Нууц: `npx wrangler secret put DATABASE_URL` (бусад .env түлхүүрүүдийг ижилээр).
+# Local: `.dev.vars` файлд DATABASE_URL гэх мэтийг бичнэ (git-д битгий оруул).
+
+name = "bio-puzzle-api"
+main = "src/worker.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+PRISMA_PG_ADAPTER = "true"
+
+# Жишээ: production frontend URL. Олон утга таслалаар заагдана (CORS).
+# CORS_ORIGIN = "https://your-app.pages.dev"

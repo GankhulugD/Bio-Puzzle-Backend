@@ -1,0 +1,154 @@
+[
+  {
+    "id": "blood-1",
+    "type": "lesson",
+    "title": "What blood carries",
+    "titleMn": "Цусны зүйлс",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Цусыг юу дамжуулдаг вэ?",
+    "options": [
+      "Зөвхөн нүүрс",
+      "Чийг, хүчилтөрөгч, шимэгч",
+      "Хатуу биет",
+      "Гэрэл"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Цус бол шингэн эсийн дагуу тэжээл, хийн дамжуулагч юм.",
+    "audioText": "Цус бол шингэн эсийн дагуу тэжээл, хийн дамжуулагч юм.",
+    "questions": []
+  },
+  {
+    "id": "blood-2",
+    "type": "lesson",
+    "title": "Red blood cells",
+    "titleMn": "Улаан эс",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Эритроцит юу агуулдаг вэ?",
+    "options": [
+      "Гемоглобин",
+      "Инсулин",
+      "Коллаген",
+      "ДНХ бүрэн"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Гемоглобин хүчилтөрөгчийг холих үүрэгтэй.",
+    "audioText": "Гемоглобин хүчилтөрөгчийг холих үүрэгтэй.",
+    "questions": []
+  },
+  {
+    "id": "blood-3",
+    "type": "lesson",
+    "title": "ABO blood types",
+    "titleMn": "Цусны бүлэг",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Цусны ангилал (ABO) юунд тулгуурладаг вэ?",
+    "options": [
+      "Нүдний өнгө",
+      "Гадаргууд байдаг антиген",
+      "Өндөр",
+      "Жин"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Улаан эсийн гадар дээрх антигенийн төрөл.",
+    "audioText": "Улаан эсийн гадар дээрх антигенийн төрөл.",
+    "questions": []
+  },
+  {
+    "id": "blood-4",
+    "type": "lesson",
+    "title": "Plasma",
+    "titleMn": "Плазма",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Цусан дотуурх шингэнийг юу гэдэг вэ?",
+    "options": [
+      "Плазма",
+      "Яс",
+      "Улаан эс",
+      "Муур"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Плазма нь улаан эс биш хэсэгт тархина.",
+    "audioText": "Плазма нь улаан эс биш хэсэгт тархина.",
+    "questions": []
+  },
+  {
+    "id": "blood-5",
+    "type": "lesson",
+    "title": "Blood pressure",
+    "titleMn": "Цусны даралт",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Цусны даралт ихдэх үед юу хийх зөвлөмжтэй вэ?",
+    "options": [
+      "Давс ихээр хэрэглэх",
+      "Эмчийн зөвлөгөө, эрүүл амьдрал",
+      "Унтаагүй үлдэх",
+      "Ус уухгүй байх"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Эмчийн хяналт, давс багасгах, дасгал зэрэг тусална.",
+    "audioText": "Эмчийн хяналт, давс багасгах, дасгал зэрэг тусална.",
+    "questions": []
+  },
+  {
+    "id": "blood-6",
+    "type": "lesson",
+    "title": "Anemia causes",
+    "titleMn": "Багадалт",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Цус багадалтын маш их шалтгаан?",
+    "options": [
+      "Төмрийн дутагдал",
+      "Тэнгэр",
+      "Хүчтэй гэрэл",
+      "Их зураг"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Төмөр дутагдал, витамин B12 дутагдал багадалт үүсгэнэ.",
+    "audioText": "Төмөр дутагдал, витамин B12 дутагдал багадалт үүсгэнэ.",
+    "questions": []
+  },
+  {
+    "id": "blood-7",
+    "type": "lesson",
+    "title": "CO₂ exchange",
+    "titleMn": "Нүүрс давхар исэл",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Цусны хүчил цуу ямар газар үүсдэг вэ?",
+    "options": [
+      "Зүрх",
+      "Уушиг",
+      "Элэг",
+      "Хэл"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Уушинд CO₂ солилцох нөлөөлнө.",
+    "audioText": "Уушинд CO₂ солилцох нөлөөлнө.",
+    "questions": []
+  },
+  {
+    "id": "blood-8",
+    "type": "lesson",
+    "title": "White blood cells",
+    "titleMn": "Цагаан эс",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Цусны цагаан эсийн гол үүрэг?",
+    "options": [
+      "Хүчилтөрөгч зөөх",
+      "Эсрэг халдвар",
+      "Хоол боловсруулах",
+      "Гэрэл гаргах"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Цагаан эсийг лейкоцит гэж нэрлэн халдварыг эсэргүүцдэг.",
+    "audioText": "Цагаан эсийг лейкоцит гэж нэрлэн халдварыг эсэргүүцдэг.",
+    "questions": []
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "teeth",
+    "title": "Teeth",
+    "titleMn": "Шүд",
+    "iconType": "molar",
+    "color": "#FFB800",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "progress": 20,
+    "totalLessons": 15,
+    "completedLessons": 3
+  },
+  {
+    "id": "heart",
+    "title": "Heart",
+    "titleMn": "Зүрх",
+    "iconType": "heart",
+    "color": "#FF4B4B",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "progress": 0,
+    "totalLessons": 10,
+    "completedLessons": 0
+  },
+  {
+    "id": "bones",
+    "title": "Bones",
+    "titleMn": "Яс",
+    "iconType": "bones",
+    "color": "#94A3B8",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "progress": 0,
+    "totalLessons": 10,
+    "completedLessons": 0
+  },
+  {
+    "id": "muscles",
+    "title": "Muscles",
+    "titleMn": "Булчин",
+    "iconType": "muscles",
+    "color": "#CE82FF",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "progress": 0,
+    "totalLessons": 8,
+    "completedLessons": 0
+  },
+  {
+    "id": "digestion",
+    "title": "Digestion",
+    "titleMn": "Хоол боловсруулах",
+    "iconType": "stomach",
+    "color": "#1CB0F6",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "progress": 0,
+    "totalLessons": 12,
+    "completedLessons": 0
+  },
+  {
+    "id": "brain",
+    "title": "Brain",
+    "titleMn": "Тархи",
+    "iconType": "brain",
+    "color": "#FF9600",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "progress": 0,
+    "totalLessons": 14,
+    "completedLessons": 0
+  },
+  {
+    "id": "blood",
+    "title": "Blood",
+    "titleMn": "Цус",
+    "iconType": "blood",
+    "color": "#DC2626",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "progress": 0,
+    "totalLessons": 8,
+    "completedLessons": 0
+  }
+]

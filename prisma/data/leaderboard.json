@@ -1,0 +1,79 @@
+[
+  {
+    "rank": 1,
+    "name": "Dr. Emma",
+    "nameMn": "Эмч Эмма",
+    "avatar": "👩‍⚕️",
+    "points": 2450,
+    "level": 12,
+    "streak": 28,
+    "isCurrentUser": false,
+    "trend": "up"
+  },
+  {
+    "rank": 2,
+    "name": "Dr. Alex",
+    "nameMn": "Эмч Алекс",
+    "avatar": "👨‍⚕️",
+    "points": 2180,
+    "level": 11,
+    "streak": 15,
+    "isCurrentUser": false,
+    "trend": "same"
+  },
+  {
+    "rank": 3,
+    "name": "Dr. Sam",
+    "nameMn": "Эмч Сэм",
+    "avatar": "👨‍⚕️",
+    "points": 1920,
+    "level": 10,
+    "streak": 22,
+    "isCurrentUser": false,
+    "trend": "down"
+  },
+  {
+    "rank": 4,
+    "name": "Junior Doctor",
+    "nameMn": "Бяцхан эмч",
+    "avatar": "👨‍⚕️",
+    "points": 0,
+    "level": 5,
+    "streak": 7,
+    "isCurrentUser": true,
+    "trend": "up"
+  },
+  {
+    "rank": 5,
+    "name": "Dr. Maya",
+    "nameMn": "Эмч Маяа",
+    "avatar": "👩‍⚕️",
+    "points": 780,
+    "level": 4,
+    "streak": 12,
+    "isCurrentUser": false,
+    "trend": "up"
+  },
+  {
+    "rank": 6,
+    "name": "Dr. Leo",
+    "nameMn": "Эмч Лео",
+    "avatar": "👨‍⚕️",
+    "points": 650,
+    "level": 4,
+    "streak": 5,
+    "isCurrentUser": false,
+    "trend": "same"
+  },
+  {
+    "rank": 7,
+    "name": "Dr. Zoe",
+    "nameMn": "Эмч Зоэ",
+    "avatar": "👩‍⚕️",
+    "points": 520,
+    "level": 3,
+    "streak": 9,
+    "isCurrentUser": false,
+    "trend": "up"
+  }
+]

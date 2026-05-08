@@ -1,0 +1,268 @@
+[
+  {
+    "id": "brain-1",
+    "type": "lesson",
+    "title": "Motor cortex",
+    "titleMn": "Хөдөлгөөний кортекс",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Тархины ямар хэсэг хөдөлгөөнийг ихэвчлэн удирддаг вэ?",
+    "options": [
+      "Мєчир",
+      "Баруун тал",
+      "Тархины ховдол",
+      "Өмнөд хэсэг"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Мотор кортекс хөдөлгөөнийг удирддаг.",
+    "audioText": "Мотор кортекс хөдөлгөөнийг удирддаг.",
+    "questions": []
+  },
+  {
+    "id": "brain-2",
+    "type": "lesson",
+    "title": "Memory & hippocampus",
+    "titleMn": "Дурсамж, гиппокамп",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Дурсамж хаана голчлон тархих вэ?",
+    "options": [
+      "Тархимбаг",
+      "Гиппокамп",
+      "Нүд",
+      "Хүзүү"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Гиппокамп дурсамжийн тархилттай холбоотой.",
+    "audioText": "Гиппокамп дурсамжийн тархилттай холбоотой.",
+    "questions": []
+  },
+  {
+    "id": "brain-3",
+    "type": "lesson",
+    "title": "Myelin",
+    "titleMn": "Миелин",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Миелин юу вэ?",
+    "options": [
+      "Цусны эс",
+      "Тархины утасны тусгаарлагч давхарга",
+      "Булчин",
+      "Шүлс"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Миелин мэдрэлийн утсыг тойроод дамжилт хурдасгана.",
+    "audioText": "Миелин мэдрэлийн утсыг тойроод дамжилт хурдасгана.",
+    "questions": []
+  },
+  {
+    "id": "brain-4",
+    "type": "lesson",
+    "title": "Brain fuel",
+    "titleMn": "Тархины түлш",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Тархины эрчим хүчний ихэвчлэн эх үүсвэр?",
+    "options": [
+      "Глюкоз",
+      "Өөх",
+      "Ус",
+      "Төмөр"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Тархи глюкозыг ихээр ашигладаг.",
+    "audioText": "Тархи глюкозыг ихээр ашигладаг.",
+    "questions": []
+  },
+  {
+    "id": "brain-5",
+    "type": "lesson",
+    "title": "Sleep debt",
+    "titleMn": "Нойрны дутагдал",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Нойр туйлдаж байх нь тархинд ямар нөлөөтэй вэ?",
+    "options": [
+      "Сайн сайхан",
+      "Тархины функц буурах, сэтгэл хөдлөл",
+      "Ямар ч нөлөөгүй",
+      "Зөвхөн нүд"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Нойр дутагдал ой, анхаарлаас гадна зөрчил үүсгэнэ.",
+    "audioText": "Нойр дутагдал ой, анхаарлаас гадна зөрчил үүсгэнэ.",
+    "questions": []
+  },
+  {
+    "id": "brain-6",
+    "type": "lesson",
+    "title": "Neurotransmitters",
+    "titleMn": "Мэдрэлийн дамжуулагч",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Мэдрэлийн трансмиттер жишээ?",
+    "options": [
+      "Инсулин",
+      "Допамин",
+      "Коллаген",
+      "Гемоглобин"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Допамин, серотонин гэх мэт мэдрэлийн дамжуулагч нь олон үүрэгтэй.",
+    "audioText": "Допамин, серотонин гэх мэт мэдрэлийн дамжуулагч нь олон үүрэгтэй.",
+    "questions": []
+  },
+  {
+    "id": "brain-7",
+    "type": "lesson",
+    "title": "Left-right brain",
+    "titleMn": "Зүүн-баруун",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Тархины баруун тал ихэвчлэн юуг удирддаг вэ?",
+    "options": [
+      "Зүүн биений мэдрэл",
+      "Баруун биений мэдрэл",
+      "Хоёуланг нь",
+      "Хөл лүүгээ"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Тархины баруун хагас ихэвчлэн зүүн биетэй холбоотой.",
+    "audioText": "Тархины баруун хагас ихэвчлэн зүүн биетэй холбоотой.",
+    "questions": []
+  },
+  {
+    "id": "brain-8",
+    "type": "lesson",
+    "title": "Brain stem",
+    "titleMn": "Тархины гүр",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Бөмбөлөг / мэдрэлийн гүрний үүрэг?",
+    "options": [
+      "Дуу чимээ",
+      "Хоол боловсруулах, зүрхний жигд байдал",
+      "Гэрэл",
+      "Яс"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Бөмбөлөг нь зүрхний эрчим, амьсгал зэрэг автомат үүргийг удирдана.",
+    "audioText": "Бөмбөлөг нь зүрхний эрчим, амьсгал зэрэг автомат үүргийг удирдана.",
+    "questions": []
+  },
+  {
+    "id": "brain-9",
+    "type": "lesson",
+    "title": "Meninges",
+    "titleMn": "Менинг",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Тархи хамгаалагч давхаргын нэр?",
+    "options": [
+      "Эпителий",
+      "Периметр",
+      "Менинг (доль, арахноид, дураг)",
+      "Перикард"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Гурван менинг тархийг гаднаас хамгаална.",
+    "audioText": "Гурван менинг тархийг гаднаас хамгаална.",
+    "questions": []
+  },
+  {
+    "id": "brain-10",
+    "type": "lesson",
+    "title": "Brain mass",
+    "titleMn": "Тархины жин",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Тархины хэмжээ (насанд хүрэгч) ойролцоогоор?",
+    "options": [
+      "500 г",
+      "1.3–1.4 кг",
+      "5 кг",
+      "200 г"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Дундаж тархины жин ойролцоогоор 1.3–1.4 кг.",
+    "audioText": "Дундаж тархины жин ойролцоогоор 1.3–1.4 кг.",
+    "questions": []
+  },
+  {
+    "id": "brain-11",
+    "type": "lesson",
+    "title": "Memory practice",
+    "titleMn": "Санах ой сайжруулах",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Санах ойг тогтмол сайжруулах практик?",
+    "options": [
+      "Зөвхөн амралтгүй",
+      "Давтах, нойр, дасгал",
+      "Зөвхөн кофе",
+      "Хоолой хөл"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Нойр, давтах үйл явц санах ойд тустай.",
+    "audioText": "Нойр, давтах үйл явц санах ойд тустай.",
+    "questions": []
+  },
+  {
+    "id": "brain-12",
+    "type": "lesson",
+    "title": "Brain imaging",
+    "titleMn": "Тархи дүрслэл",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "CT скан хийхэд юу ашиглаж байна вэ?",
+    "options": [
+      "Зөвхөн ургамал",
+      "Röntgen туяа (томографи)",
+      "Дуу",
+      "Хөвөн"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CT нь X-туяг түрүүлэгч гэрэл зураг авдаг.",
+    "audioText": "CT нь X-туяг түрүүлэгч гэрэл зураг авдаг.",
+    "questions": []
+  },
+  {
+    "id": "brain-13",
+    "type": "lesson",
+    "title": "Broca's area",
+    "titleMn": "Брокагийн бүс",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Олон тархины хэсэг нь хэл ярианы хөгжилд?",
+    "options": [
+      "Брокагийн бүс",
+      "Элэг",
+      "Гэдэс",
+      "Урт шил"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Брокагийн орон хэл ярианы хөгжилтэй холбоотой (ихэвчлэн зүүн).",
+    "audioText": "Брокагийн орон хэл ярианы хөгжилтэй холбоотой (ихэвчлэн зүүн).",
+    "questions": []
+  },
+  {
+    "id": "brain-14",
+    "type": "lesson",
+    "title": "Stress hormone",
+    "titleMn": "Стрессийн гормон",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Стрессийн үед ялгаруулагдах гол гормон?",
+    "options": [
+      "Инсулин",
+      "Кортизол",
+      "Тироксин",
+      "Эстроген"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Кортизол стрессийн хариу үйлдэлд оролцоно.",
+    "audioText": "Кортизол стрессийн хариу үйлдэлд оролцоно.",
+    "questions": []
+  }
+]

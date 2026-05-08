@@ -1,0 +1,230 @@
+[
+  {
+    "id": "digestion-1",
+    "type": "lesson",
+    "title": "Digestion starts",
+    "titleMn": "Боловсруулалтын эхлэл",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Хоол боловсруулах эхлэл нь хаанаас эхэлдэг вэ?",
+    "options": [
+      "Зоо хэсэг",
+      "Амны хөндий",
+      "Гэдэс",
+      "Элэг"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Хооллож зуувчилснаар боловсруулалт амнаас эхэлнэ.",
+    "audioText": "Хооллож зуувчилснаар боловсруулалт амнаас эхэлнэ.",
+    "questions": []
+  },
+  {
+    "id": "digestion-2",
+    "type": "lesson",
+    "title": "Liver role",
+    "titleMn": "Элэгний үүрэг",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Элэгний гол үүрэг?",
+    "options": [
+      "Уураг синтез",
+      "Токсин задлах, нүүрс-ус хадгалах",
+      "Цус тууралт",
+      "Гормон"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Элэг олон төрлийн метаболизм, детокс үүрэгтэй.",
+    "audioText": "Элэг олон төрлийн метаболизм, детокс үүрэгтэй.",
+    "questions": []
+  },
+  {
+    "id": "digestion-3",
+    "type": "lesson",
+    "title": "Intestine & IBS",
+    "titleMn": "Гэдэсний эрүүл мэнд",
+    "isUnlocked": true,
+    "isCompleted": false,
+    "question": "Гэдэсний уян хошуунд ямар нөхцөл ихэвчлэн илэрдэг вэ?",
+    "options": [
+      "Бариу загатнах",
+      "Нойргүйдэл",
+      "Тархины дунд бүс",
+      "Шүлс"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Кели үед гэдэсний ханиалгалт, бариу өвдөлт гарч болно.",
+    "audioText": "Кели үед гэдэсний ханиалгалт, бариу өвдөлт гарч болно.",
+    "questions": []
+  },
+  {
+    "id": "digestion-4",
+    "type": "lesson",
+    "title": "Insulin",
+    "titleMn": "Инсулин",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Инсулины гол үүрэг?",
+    "options": [
+      "Цусны сахар бууруулах",
+      "Цусны даралт өсгөх",
+      "Уураг задлах",
+      "Булчин өргөх"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Инсулин глюкозыг эс рүү оруулж сахарын түвшинг бууруулна.",
+    "audioText": "Инсулин глюкозыг эс рүү оруулж сахарын түвшинг бууруулна.",
+    "questions": []
+  },
+  {
+    "id": "digestion-5",
+    "type": "lesson",
+    "title": "GI tract",
+    "titleMn": "Хоол боловсруулах зам",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Хэвлийн хөндийд хоол ямар трактаар явдаг вэ?",
+    "options": [
+      "Аорт",
+      "Хоолой",
+      "Бага агуй",
+      "Тархимтгай"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Хоол бага агуй → гэдэсний тракт гэж дамжина.",
+    "audioText": "Хоол бага агуй → гэдэсний тракт гэж дамжина.",
+    "questions": []
+  },
+  {
+    "id": "digestion-6",
+    "type": "lesson",
+    "title": "Kidneys",
+    "titleMn": "Бөөр",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Ялгаруулах системийн гол эрхтэн?",
+    "options": [
+      "Дэлбэг",
+      "Бөөр",
+      "Чөлөөт эрхтэн",
+      "Чийраг"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Бөөр шүүх, шээс гаргах үүрэгтэй.",
+    "audioText": "Бөөр шүүх, шээс гаргах үүрэгтэй.",
+    "questions": []
+  },
+  {
+    "id": "digestion-7",
+    "type": "lesson",
+    "title": "Duodenum",
+    "titleMn": "Давсны хоолой",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Ургийн давсыг ямар эрхтэн ялгаруулдаг вэ?",
+    "options": [
+      "Давсны хоолой (duodenum)",
+      "Нойр булчин",
+      "Зүрх",
+      "Гавал"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Давсны хоолойнд нийлүүлэгдэж нялцгаахад тусална (эхний хэсэг).",
+    "audioText": "Давсны хоолойнд нийлүүлэгдэж нялцгаахад тусална (эхний хэсэг).",
+    "questions": []
+  },
+  {
+    "id": "digestion-8",
+    "type": "lesson",
+    "title": "Esophagus",
+    "titleMn": "Хоолой",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Хоолойны үндсэн ажил?",
+    "options": [
+      "Зангиагүй",
+      "Амьсгал болон залгихад туслах",
+      "Дуу гаргах",
+      "Цус тохируулах"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Хоолой хоол, агаар дамжуулах хөндий юм.",
+    "audioText": "Хоолой хоол, агаар дамжуулах хөндий юм.",
+    "questions": []
+  },
+  {
+    "id": "digestion-9",
+    "type": "lesson",
+    "title": "Potassium",
+    "titleMn": "Кали",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Калий ихтэй хоол нь зүрхэнд хэрхэн нөлөөлөх вэ?",
+    "options": [
+      "Илүү их",
+      "Зүрхний цохилтыг тогтворжуулахад тусална",
+      "Үргэлж муу",
+      "Мэдэгдэхгүй"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Калий тохируулсан хэмжээ нь электролит тэнцвэрт чухал.",
+    "audioText": "Калий тохируулсан хэмжээ нь электролит тэнцвэрт чухал.",
+    "questions": []
+  },
+  {
+    "id": "digestion-10",
+    "type": "lesson",
+    "title": "Vitamin D",
+    "titleMn": "Витамин D",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Витамин D-ийн эх үүсвэр?",
+    "options": [
+      "Зөвхөн ургамал",
+      "Нарны гэрэл + зарим хоол",
+      "Зөвхөн цус",
+      "Дэлбэг"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Арьсны дор нарны UV-B витамин D үүсгэнэ.",
+    "audioText": "Арьсны дор нарны UV-B витамин D үүсгэнэ.",
+    "questions": []
+  },
+  {
+    "id": "digestion-11",
+    "type": "lesson",
+    "title": "Large intestine",
+    "titleMn": "Бөөн гэдэс",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Бөөн гэдэсний гол үүрэг?",
+    "options": [
+      "Ус шингээх",
+      "Уургийн задрал эхлүүлэх",
+      "Цочроох",
+      "Гэрэл гаргах"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Бөөн гэдэс шингэн шингээх, цуглуулга үргэлжилнэ.",
+    "audioText": "Бөөн гэдэс шингэн шингээх, цуглуулга үргэлжилнэ.",
+    "questions": []
+  },
+  {
+    "id": "digestion-12",
+    "type": "lesson",
+    "title": "Small intestine length",
+    "titleMn": "Бага гэдэсний урт",
+    "isUnlocked": false,
+    "isCompleted": false,
+    "question": "Бага гэдэсний урт ойролцоогоор?",
+    "options": [
+      "1 м",
+      "6–7 м",
+      "20 см",
+      "50 мм"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Насанд хүрэгчийн бага гэдэс ойролцоогоор 6–7 м урттай.",
+    "audioText": "Насанд хүрэгчийн бага гэдэс ойролцоогоор 6–7 м урттай.",
+    "questions": []
+  }
+]

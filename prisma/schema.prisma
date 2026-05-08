@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Бүртгэлтэй хэрэглэгч — доорх бүх хувийн бүртгэл эндээс нэг дор харагдана (тоглоомын session, level оноо, хичээлийн явц, шалгалтын шилдэг).
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  /// Legacy Clerk users may be null until they register a password (or admin backfills).
+  passwordHash  String?
+  username      String   @unique
+  streak        Int      @default(0)
+  age           Int?
+  profileExtras Json?
+  createdAt     DateTime @default(now())
+
+  gameSessions   GameSession[]
+  levelScores    Score[]
+  lessonProgress UserLessonProgress[]
+  quizBests      UserQuizBest[]
+}
+
+/// Тоглоомын level (тагнуул/эвлүүлдэг) — бүх хэрэглэгчид нийтлэг контент; хэрэглэгчийн оноо/session-тэй levelId-ээр холбогдоно.
+model Level {
+  id         Int      @id @default(autoincrement())
+  title      String
+  difficulty String   @default("easy")
+  data       Json
+  createdAt  DateTime @default(now())
+
+  gameSessions GameSession[]
+  scores       Score[]
+}
+
+model GameSession {
+  id           String   @id @default(cuid())
+  userId       String
+  levelId      Int
+  currentState Json
+  isCompleted  Boolean  @default(false)
+  timeElapsed  Int      @default(0)
+  moves        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  level        Level    @relation(fields: [levelId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, levelId])
+}
+
+model Score {
+  id          String   @id @default(cuid())
+  userId      String
+  levelId     Int
+  points      Int
+  timeSeconds Int
+  completedAt DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  level       Level    @relation(fields: [levelId], references: [id], onDelete: Cascade)
+}
+
+/// Хичээл тус бүр дээрх хэрэглэгчийн явц.
+model UserLessonProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  lessonId    String
+  completed   Boolean   @default(false)
+  stars       Int       @default(0)
+  attempts    Int       @default(0)
+  completedAt DateTime?
+  updatedAt   DateTime  @default(now()) @updatedAt
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson      CurriculumLesson  @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@index([userId])
+}
+
+/// Тоглоомын шалгалт/асуултын түлхүүр (quizKey) тутамд хадгалсан шилдэг оноо, хурд (хичээлийн хүснэгтэй шууд FK холбоогүй).
+model UserQuizBest {
+  id            String   @id @default(cuid())
+  userId        String
+  quizKey       String
+  score         Int
+  fastestTimeMs Int?
+  correctCount  Int?
+  totalCount    Int?
+  attempts      Int      @default(0)
+  updatedAt     DateTime @default(now()) @updatedAt
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, quizKey])
+  @@index([quizKey, score(sort: Desc)])
+}
+
+/// Бүлэг (roadmap) — frontend `appData.ts` chapters.
+model Chapter {
+  id               String   @id
+  title            String
+  titleMn          String
+  iconType         String
+  color            String
+  sortOrder        Int      @default(0)
+  isUnlocked       Boolean  @default(false)
+  isCompleted      Boolean  @default(false)
+  progress         Int      @default(0)
+  totalLessons     Int      @default(0)
+  completedLessons Int      @default(0)
+
+  lessons CurriculumLesson[]
+}
+
+/// Бүлэг бүрт хамаарах асуулт/хичээл — хүснэгт `curriculum_lesson` (шүд, яс, зүрх, г.м. нь `chapterId`-ээр ялгагдана).
+model CurriculumLesson {
+  id            String   @id
+  chapterId     String
+  type          String
+  title         String
+  titleMn       String
+  sortOrder     Int      @default(0)
+  question      String
+  options       Json
+  correctAnswer Int
+  explanation   String
+  audioText     String
+  questionsJson Json     @default("[]")
+  isUnlocked    Boolean  @default(false)
+  isCompleted   Boolean  @default(false)
+  chapter       Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  userProgress  UserLessonProgress[]
+
+  @@index([chapterId])
+  @@map("curriculum_lesson")
+}
+
+/// Жишээ профайл, leaderboard, teeth game parts гэх мэт JSON агуулга.
+model AppContent {
+  key  String @id
+  data Json
+}
