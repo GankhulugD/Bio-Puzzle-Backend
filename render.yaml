@@ -1,0 +1,30 @@
+# Render Blueprint: Dashboard → Blueprints → New Blueprint Instance → repo сонгоно.
+# DATABASE_URL Postgres сервисээс автоматаар орно. JWT_SECRET, CORS_ORIGIN-ыг гараар нэмнэ.
+databases:
+  - name: bio-puzzle-db
+    databaseName: bio_puzzle
+    user: bio_puzzle
+    plan: free
+
+services:
+  - type: web
+    name: bio-puzzle-api
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    startCommand: npm run render:start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bio-puzzle-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CORS_ORIGIN
+        sync: false
