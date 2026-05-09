@@ -12,6 +12,8 @@ const levels_1 = __importDefault(require("./routes/levels"));
 const sessions_1 = __importDefault(require("./routes/sessions"));
 const scores_1 = __importDefault(require("./routes/scores"));
 const curriculum_1 = __importDefault(require("./routes/curriculum"));
+const progress_1 = __importDefault(require("./routes/progress"));
+const leaderboard_1 = __importDefault(require("./routes/leaderboard"));
 function createApp() {
     const app = (0, express_1.default)();
     const allowedOrigins = (process.env.CORS_ORIGIN || "http://localhost:3000")
@@ -32,5 +34,7 @@ function createApp() {
     app.use("/sessions", sessions_1.default);
     app.use("/scores", scores_1.default);
     app.use("/curriculum", curriculum_1.default);
+    app.use("/progress", progress_1.default);
+    app.use("/leaderboard", leaderboard_1.default);
     return app;
 }

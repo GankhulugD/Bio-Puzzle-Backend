@@ -14,7 +14,17 @@ model User {
   /// Legacy Clerk users may be null until they register a password (or admin backfills).
   passwordHash  String?
   username      String   @unique
+  /// Нийт цуглуулсан оноо (хичээл, тоглоом).
+  totalPoints   Int      @default(0)
+  /// Үе — totalPoints-оос тооцогдоно, сервер дээр шинэчлэгдэнэ.
+  level         Int      @default(1)
+  /// Дуусгасан тоглоом/асуултын тоо (streak логикт ашиглана).
+  gamesPlayed   Int      @default(0)
   streak        Int      @default(0)
+  /// Сүүлийн идэвхийн өдөр (UTC YYYY-MM-DD) — streak давхцлыг зохицуулах.
+  lastActiveDay String?
+  /// Харуулах Монгол нэр (сонголттой).
+  displayNameMn String?
   age           Int?
   profileExtras Json?
   createdAt     DateTime @default(now())
@@ -62,6 +72,8 @@ model Score {
   completedAt DateTime @default(now())
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   level       Level    @relation(fields: [levelId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, levelId])
 }
 
 /// Хичээл тус бүр дээрх хэрэглэгчийн явц.

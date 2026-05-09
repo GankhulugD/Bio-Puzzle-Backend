@@ -1,6 +1,13 @@
 import "dotenv/config";
 import { createApp } from "./app";
 
+const jwt = process.env.JWT_SECRET?.trim();
+if (!jwt || jwt.length < 16) {
+  console.error(
+    "[FATAL] JWT_SECRET байхгүй эсвэл 16-аас богино — /auth/register, /auth/login ажиллахгүй. Render дээр Environment-д урт санамсаргүй string тохируулна уу.",
+  );
+}
+
 const app = createApp();
 // Render дээр process.env.PORT-ыг системээс автоматаар өгдөг
 const PORT = Number(process.env.PORT) || 4000;

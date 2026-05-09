@@ -333,37 +333,82 @@ DB-д түүхийн мөр `passwordHash` хоосон үед бас ижилх
 
 ---
 
-### Curriculum — `/curriculum` _(public)_
+### Curriculum — `/curriculum`
 
 Frontend-тэй `/lib/curriculumApi.ts` ба bootstrap хариун дахь агуулгыг тааруулахын тулд DB-с уншина.
 Өгөгдлийг оруулах: `npm run db:seed` (шинэ хүснэгтүүд үүссэн байх ёстой).
 
-> **Neon / production:** Бүх бүлгийн хичээл нь Postgres **`curriculum_lesson`** хүснэгт хадгалагдана (`chapterId`-ээр ялгагдана).
-> `npm run db:deploy` — шинэ миграци `teeth_Lesson` → `curriculum_lesson`-ийг ажиллуулна.
-> Өмнөх шилжилтүүд: `Lesson` → `teeth_Lesson` (`20260207120000_rename_lesson_to_teeth_lesson`).
-> Гараар SQL оруулсан бол `npx prisma migrate resolve` хэрэглэнэ.
+> **Deploy:** production-д `npm run db:deploy` эсвэл `render:start` доторх `prisma migrate deploy`. Шинэ migration: `20260509100000_user_stats_and_score_unique` (User статистик талбарууд, Score хэрэглэгч тутамд нэг level-д нэг мөр).
+> **Neon / production:** хичээлүүд Postgres **`curriculum_lesson`** хүснэгтэнд (`chapterId`).
+> Migration түүх төгс нийцэхгүй бол (`migrate drift`) эхлээд `prisma migrate resolve` эсвэл SQL-ийг гараар тааруулна.
 
 #### `GET /curriculum/bootstrap`
 
-**Response 200** (товчлоод):
+**Headers (сонголттой):** `Authorization: Bearer <JWT>` — байвал `UserLessonProgress`-оос хичээл бүрийн `isCompleted`, `stars`, түгжээ (бүлэг/дараалал дахь хичээл) тооцож нэгтгэнэ. Байхгүй бол зочны горим (зөвхөн эхний бүлэг түгжээгүй).
+
+**Response 200:**
 
 ```json
 {
-  "chapters": [{ "id": "teeth", "title": "Teeth", "sortOrder": 0, "..." : "..." }],
-  "lessonsByChapter": { "teeth": [{ "id": "teeth-1", "question": "...", "options": [], "..." }] },
-  "userProfile": { "name": "Junior Doctor", "badges": [] },
-  "leaderboard": [{ "rank": 1, "points": 2450, "..." }],
-  "teethGameParts": [{ "id": "incisor-1", "..." }]
+  "chapters": [
+    {
+      "id": "teeth",
+      "titleMn": "…",
+      "sortOrder": 0,
+      "isUnlocked": true,
+      "isCompleted": false,
+      "progress": 40,
+      "totalLessons": 5,
+      "completedLessons": 2
+    }
+  ],
+  "lessonsByChapter": {
+    "teeth": [
+      {
+        "id": "teeth-1",
+        "titleMn": "…",
+        "isUnlocked": true,
+        "isCompleted": true,
+        "stars": 3,
+        "question": "…",
+        "options": [],
+        "correctAnswer": 0
+      }
+    ]
+  },
+  "teethGameParts": {}
 }
 ```
 
+Жагсаалт / профайлын хиймэл JSON энд байхгүй — тусад нь `GET /leaderboard/global`, `GET /users/me/profile`.
+
 #### `GET /curriculum/chapters`
 
-Зөвхөн `Chapter` мөрүүд, `sortOrder` өсөхөөр эрэмбэлэгдсэн.
+Дээрхтэй адил **`optionalAuth`** — JWT байвал явцтай нэгтгэсэн бүлгийн жагсаалт.
 
 #### `GET /curriculum/chapters/:chapterId/lessons`
 
-Тухайн бүлгийн хичээлүүдийг Postgres `curriculum_lesson` хүснэгээс уншсан жагсаалт.
+Тухайн бүлгийн хичээлүүд (явцтай нэгтгэсэн).
+
+---
+
+### Явц / жагсаалт — `/progress`, `/leaderboard`
+
+#### `POST /progress/chapter-quiz` _(auth)_
+
+Бүлгийн асуулга дуусахад: `UserLessonProgress`, оноо, streak, `User.quizBest` (`chapter:<id>`).
+
+**Body:** `{ "chapterId": "teeth", "correctCount": 8, "totalCount": 10 }`
+
+#### `POST /progress/mini-game` _(auth)_
+
+Жижиг тоглоом (`tooth-quiz`, `tooth-label`, `skeleton`): `UserQuizBest`, оноо + streak.
+
+#### `GET /leaderboard/global` _(public, Bearer сонголттой)_
+
+`User.totalPoints` болон skeleton-ийн жинхэнэ хурдаар эрэмбэлсэн топ жагсаалт. Bearer байвал `isCurrentUser` зөв тохируулна.
+
+**Response:** `{ "entries": [...], "totalUsers": N, "me": null | { rank, totalPoints, … } }`
 
 ---
 
@@ -489,8 +534,9 @@ Level дуусгасны дараа дуудна.
 | `GET`    | `/health`                      |  —   | Сервер амьд эсэх             |
 | `POST`   | `/auth/register`               |  —   | Бүртгэл + JWT буцаах         |
 | `POST`   | `/auth/login`                  |  —   | Нэвтрэлт + JWT буцаах        |
-| `GET`    | `/users/me`                    |  ✅  | Өөрийн профайл               |
-| `PATCH`  | `/users/me`                    |  ✅  | Профайл шинэчлэх             |
+| `GET`    | `/users/me`                    |  ✅  | Өөрийн профайл (totalPoints, level, …) |
+| `GET`    | `/users/me/profile`           |  ✅  | UI профайл + badge + character       |
+| `PATCH`  | `/users/me`                    |  ✅  | username, age, displayNameMn, profileExtras |
 | `DELETE` | `/users/me`                    |  ✅  | Өөрийгөө устгах              |
 | `GET`    | `/levels`                      |  —   | Бүх level-ийн жагсаалт       |
 | `GET`    | `/levels/:id`                  |  —   | Нэг level авах               |
@@ -503,11 +549,16 @@ Level дуусгасны дараа дуудна.
 | `DELETE` | `/sessions/:id`                |  ✅  | Session устгах               |
 | `GET`    | `/scores/leaderboard/:levelId` |  —   | Тухайн level-ийн топ 10      |
 | `GET`    | `/scores/me`                   |  ✅  | Өөрийн онооны түүх           |
-| `POST`   | `/scores`                      |  ✅  | Шинэ оноо нэмэх              |
+| `POST`   | `/scores`                      |  ✅  | Level оноо upsert (нэг user нэг level-д нэг мөр) |
 | `DELETE` | `/scores/:id`                  |  ✅  | Оноо устгах                  |
-| `GET`    | `/curriculum/bootstrap`       |  —   | Бүлэг + хичээл + demo JSON    |
-| `GET`    | `/curriculum/chapters`        |  —   | Зөвхөн roadmap бүлгүүд        |
-| `GET`    | `/curriculum/chapters/:chapterId/lessons` |  — | Нэг бүлгийн хичээлүүд |
+| `GET`    | `/curriculum/bootstrap`       |  🔓  | Бүлэг + хичээл + teethGameParts (Bearer сонголттой явц) |
+| `GET`    | `/curriculum/chapters`        |  🔓  | Бүлгүүд (Bearer сонголттой явц) |
+| `GET`    | `/curriculum/chapters/:chapterId/lessons` | 🔓 | Хичээлүүд (Bearer сонголттой явц) |
+| `POST`   | `/progress/chapter-quiz`      |  ✅  | Бүлгийн quiz явц + оноо      |
+| `POST`   | `/progress/mini-game`         |  ✅  | Жижиг тоглоомын үр дүн      |
+| `GET`    | `/leaderboard/global`         |  🔓  | Нийт жагсаалт (Bearer сонголттой) |
+
+🔓 = JWT байж болно (заавал биш).
 
 ---
 

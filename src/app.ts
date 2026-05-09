@@ -6,6 +6,8 @@ import levelRoutes from "./routes/levels";
 import sessionRoutes from "./routes/sessions";
 import scoreRoutes from "./routes/scores";
 import curriculumRoutes from "./routes/curriculum";
+import progressRoutes from "./routes/progress";
+import leaderboardRoutes from "./routes/leaderboard";
 
 export function createApp() {
   const app = express();
@@ -35,6 +37,8 @@ export function createApp() {
   app.use("/sessions", sessionRoutes);
   app.use("/scores", scoreRoutes);
   app.use("/curriculum", curriculumRoutes);
+  app.use("/progress", progressRoutes);
+  app.use("/leaderboard", leaderboardRoutes);
 
   return app;
 }

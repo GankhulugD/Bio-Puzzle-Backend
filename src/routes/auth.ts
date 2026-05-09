@@ -3,17 +3,10 @@ import bcrypt from "bcryptjs";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../lib/prisma";
 import { signJwtUserId } from "../lib/jwt";
+import { USER_PUBLIC_SELECT } from "../lib/userDto";
+import { mapDbOrConfigError } from "../lib/apiErrors";
 
 const router = Router();
-
-const userPublicSelect = {
-  id: true,
-  email: true,
-  username: true,
-  streak: true,
-  age: true,
-  createdAt: true,
-} as const;
 
 function normalizeEmail(email: string) {
   return email.trim().toLowerCase();
@@ -70,9 +63,13 @@ router.post("/register", async (req: Request, res: Response) => {
       id: string;
       email: string;
       username: string;
+      displayNameMn: string | null;
       streak: number;
       age: number | null;
       createdAt: Date;
+      totalPoints: number;
+      level: number;
+      gamesPlayed: number;
     };
 
     let user: PublicUser | null = null;
@@ -85,7 +82,7 @@ router.post("/register", async (req: Request, res: Response) => {
             passwordHash,
             username: usernameCandidate,
           },
-          select: userPublicSelect,
+          select: USER_PUBLIC_SELECT,
         });
         break;
       } catch (e) {
@@ -109,7 +106,9 @@ router.post("/register", async (req: Request, res: Response) => {
     res.status(201).json({ token, user });
   } catch (err) {
     console.error("POST /auth/register error", err);
-    res.status(500).json({ error: "Registration failed" });
+    res.status(500).json({
+      error: mapDbOrConfigError(err, "Бүртгэл амжилтгүй"),
+    });
   }
 });
 
@@ -142,14 +141,16 @@ router.post("/login", async (req: Request, res: Response) => {
 
     const user = await prisma.user.findUniqueOrThrow({
       where: { id: row.id },
-      select: userPublicSelect,
+      select: USER_PUBLIC_SELECT,
     });
 
     const token = signJwtUserId(row.id);
     res.json({ token, user });
   } catch (err) {
     console.error("POST /auth/login error", err);
-    res.status(500).json({ error: "Login failed" });
+    res.status(500).json({
+      error: mapDbOrConfigError(err, "Нэвтрэлт амжилтгүй"),
+    });
   }
 });
 

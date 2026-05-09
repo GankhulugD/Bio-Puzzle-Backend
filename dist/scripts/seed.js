@@ -87,8 +87,6 @@ async function main() {
     const digestionLessons = loadJson("digestionLessons.json");
     const brainLessons = loadJson("brainLessons.json");
     const bloodLessons = loadJson("bloodLessons.json");
-    const userProfile = loadJson("userProfile.json");
-    const leaderboard = loadJson("leaderboard.json");
     const teethGameParts = loadJson("teethGameParts.json");
     await prisma.curriculumLesson.deleteMany();
     await prisma.chapter.deleteMany();
@@ -119,14 +117,10 @@ async function main() {
     await seedLessons("brain", brainLessons);
     await seedLessons("blood", bloodLessons);
     await syncChapterLessonCounts();
-    await prisma.appContent.createMany({
-        data: [
-            { key: "user_profile", data: userProfile },
-            { key: "leaderboard", data: leaderboard },
-            { key: "teeth_game_parts", data: teethGameParts },
-        ],
+    await prisma.appContent.create({
+        data: { key: "teeth_game_parts", data: teethGameParts },
     });
-    console.log(`Seeded ${chapters.length} chapters; lessons teeth=${teethLessons.length} bones=${boneLessons.length} heart=${heartLessons.length} muscles=${musclesLessons.length} digestion=${digestionLessons.length} brain=${brainLessons.length} blood=${bloodLessons.length}; AppContent x3.`);
+    console.log(`Seeded ${chapters.length} chapters; lessons teeth=${teethLessons.length} bones=${boneLessons.length} heart=${heartLessons.length} muscles=${musclesLessons.length} digestion=${digestionLessons.length} brain=${brainLessons.length} blood=${bloodLessons.length}; AppContent teeth_game_parts.`);
 }
 main()
     .catch((e) => {

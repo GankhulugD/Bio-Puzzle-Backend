@@ -8,15 +8,9 @@ const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const client_1 = require("@prisma/client");
 const prisma_1 = require("../lib/prisma");
 const jwt_1 = require("../lib/jwt");
+const userDto_1 = require("../lib/userDto");
+const apiErrors_1 = require("../lib/apiErrors");
 const router = (0, express_1.Router)();
-const userPublicSelect = {
-    id: true,
-    email: true,
-    username: true,
-    streak: true,
-    age: true,
-    createdAt: true,
-};
 function normalizeEmail(email) {
     return email.trim().toLowerCase();
 }
@@ -60,7 +54,7 @@ router.post("/register", async (req, res) => {
                         passwordHash,
                         username: usernameCandidate,
                     },
-                    select: userPublicSelect,
+                    select: userDto_1.USER_PUBLIC_SELECT,
                 });
                 break;
             }
@@ -82,7 +76,9 @@ router.post("/register", async (req, res) => {
     }
     catch (err) {
         console.error("POST /auth/register error", err);
-        res.status(500).json({ error: "Registration failed" });
+        res.status(500).json({
+            error: (0, apiErrors_1.mapDbOrConfigError)(err, "Бүртгэл амжилтгүй"),
+        });
     }
 });
 router.post("/login", async (req, res) => {
@@ -104,14 +100,16 @@ router.post("/login", async (req, res) => {
         }
         const user = await prisma_1.prisma.user.findUniqueOrThrow({
             where: { id: row.id },
-            select: userPublicSelect,
+            select: userDto_1.USER_PUBLIC_SELECT,
         });
         const token = (0, jwt_1.signJwtUserId)(row.id);
         res.json({ token, user });
     }
     catch (err) {
         console.error("POST /auth/login error", err);
-        res.status(500).json({ error: "Login failed" });
+        res.status(500).json({
+            error: (0, apiErrors_1.mapDbOrConfigError)(err, "Нэвтрэлт амжилтгүй"),
+        });
     }
 });
 exports.default = router;
